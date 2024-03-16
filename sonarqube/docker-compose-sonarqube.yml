@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  sonarqube:
+    image: sonarqube:latest
+
+    ports:
+      - "9000:9000"
+
+    restart: always
+
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-logs:/opt/sonarqube/logs
+      - sonarqube-extensions:/opt/sonarqube/extensions
+
+volumes:
+  sonarqube-data:
+  sonarqube-logs:
+  sonarqube-extensions:
